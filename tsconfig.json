@@ -1,0 +1,12 @@
+{
+    "extends": "@tsconfig/docusaurus/tsconfig.json",
+    "include": ["src/"],
+    "exclude": ["node_modules", "./plugins/docgen.js", "./plugins/docgen.ts"],
+    "compilerOptions": {
+        "types": ["node", "@docusaurus/module-type-aliases", "@types/gtag.js"],
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "allowSyntheticDefaultImports": true,
+        "jsx": "react"
+    }
+}

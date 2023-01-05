@@ -53,81 +53,160 @@ const config = {
     ],
   ],
 
-  themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      navbar: {
-        title: '首页',
-        logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+  plugins: [
+    async function tailwindcss() {
+      return {
+        name: "docusaurus-tailwindcss",
+        configurePostCss(postcssOptions) {
+          postcssOptions.plugins.push(require("tailwindcss"));
+          postcssOptions.plugins.push(require("autoprefixer"));
+          return postcssOptions;
         },
-        items: [
-          {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Tutorial123',
-          },
-          {to: '/blog', label: 'Blog', position: 'left'},
-          {to: '/blog1', label: 'Blog1', position: 'left'},
-          {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
-          },
-        ],
+      };
+    },
+    "./plugins/intercom.js"
+  ],
+  themeConfig: {
+    prism: {
+      magicComments: [
+        // Remember to extend the default highlight class name as well!
+        {
+          className: "theme-code-block-highlighted-line",
+          line: "highlight-next-line",
+          block: { start: "highlight-start", end: "highlight-end" },
+        },
+        {
+          className: "code-block-hidden",
+          line: "hide-next-line",
+          block: { start: "hide-start", end: "hide-end" },
+        },
+      ],
+    },
+    image: "img/refine_social_new.png",
+    algolia: {
+      appId: "KRR9VEUPCT",
+      apiKey: "cd0188125dcd31fb4b011b5e536d963a",
+      indexName: "refine",
+      contextualSearch: true,
+    },
+    metadata: [
+      {
+        name: "keywords",
+        content: "java,k8s,docker",
       },
-      footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+    ],
+    navbar: {
+      logo: {
+        alt: "refine",
+        src: "img/meetup.svg",
       },
-      prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+      items: [
+        { to: "blog", label: "Blog", position: "left" },
+
+        {
+          href: "https://github.com/refinedev/refine",
+          position: "right",
+          className: "header-icon-link header-github-link",
+        },
+        {
+          href: "https://discord.gg/refine",
+          position: "right",
+          className: "header-icon-link header-discord-link",
+        },
+        {
+          href: "https://twitter.com/refine_dev",
+          position: "right",
+          className: "header-icon-link header-twitter-link",
+        },
+      ],
+    },
+    footer: {
+      logo: {
+        alt: "refine",
+        src: "/img/meetup.svg",
       },
-    }),
+      links: [
+        {
+          title: "Resources",
+          items: [
+            {
+              label: "Getting Started",
+              to: "docs/getting-started/overview",
+            },
+            {
+              label: "Tutorials",
+              to: "docs",
+            },
+            {
+              label: "Blog",
+              to: "blog",
+            },
+          ],
+        },
+        {
+          title: "Product",
+          items: [
+            {
+              label: "Examples",
+              to: "examples",
+            },
+            {
+              label: "Integrations",
+              to: "integrations",
+            },
+            {
+              label: "Become an Expert",
+              to: "become-a-refine-expert",
+            },
+          ],
+        },
+        {
+          title: "Company",
+          items: [
+            {
+              label: "About",
+              to: "about",
+            },
+            {
+              label: "Store 🎁",
+              to: "https://store.refine.dev",
+            },
+          ],
+        },
+        {
+          title: "__SOCIAL",
+          items: [
+            {
+              href: "https://github.com/refinedev/refine",
+              label: "github",
+            },
+            {
+              href: "https://twitter.com/refine_dev",
+              label: "twitter",
+            },
+            {
+              href: "/img/placeholder.png",
+              label: "wechat",
+            },
+          ],
+        },
+      ],
+    },
+  },
+  customFields: {
+    /** Footer Fields */
+    footerDescription:
+      '从明天起，做一个幸福的人。<br> 喂马，劈柴，周游世界。<br>  从明天起，关心粮食和蔬菜。<br> 我有一所房子，面向大海，春暖花开。<br> 从明天起，和每一个亲人通信。<br>告诉他们我的幸福。<br>那幸福的闪电告诉我的。<br>我将告诉每一个人。 ',
+        // '<strong style="font-weight:700;">refine</strong> is a React-based framework for the rapid development of web applications. It eliminates the repetitive tasks demanded by <strong style="font-weight:700;">CRUD</strong> operations and provides industry standard solutions.',
+    contactTitle: "联系我",
+    contactDescription: [
+      "微信: jzw89757",
+    ],
+    contactEmail: "1211717080@qq.com",
+
+
+  },
+
 };
 
 module.exports = config;
