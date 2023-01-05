@@ -58,14 +58,14 @@ export const SectionHome: React.FC = () => {
                         </div>
                         <div className="flex items-center gap-8 mt-4 lg:mt-16">
                             <a
-                                href="https://refinedev.typeform.com/to/Ypm6r6oj"
+                                href="docs/tutorial-basics"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="shadow-startTiles  appearance-none flex items-center justify-center no-underline font-bold font-montserrat text-sm h-8 w-44 text-white text-center bg-gradient-to-l from-[#1890FF] to-[#47EBF5] border-0 rounded-[4px] cursor-pointer"
                             >
-                                ADD YOURS{" "}
-                                <span className="mx-1 font-normal">&</span>
-                                WIN
+                                与君{" "}
+                                <span className="mx-1 font-normal">🧸</span>
+                                共勉 →
                             </a>
 
                         </div>

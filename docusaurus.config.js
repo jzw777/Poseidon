@@ -37,14 +37,14 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/jzw777/Poseidon',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/jzw777/Poseidon',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -64,7 +64,7 @@ const config = {
         },
       };
     },
-    "./plugins/intercom.js"
+    // "./plugins/intercom.js"
   ],
   themeConfig: {
     prism: {
@@ -97,27 +97,28 @@ const config = {
     ],
     navbar: {
       logo: {
-        alt: "refine",
+        alt: "Bfine",
         src: "img/meetup.svg",
       },
       items: [
-        { to: "blog", label: "Blog", position: "left" },
+        { to: "blog", label: "博客", position: "left" },
 
         {
-          href: "https://github.com/refinedev/refine",
+          href: "https://github.com/jzw777/Poseidon",
           position: "right",
           className: "header-icon-link header-github-link",
         },
         {
-          href: "https://discord.gg/refine",
+          href:"/img/qrcode.png",
           position: "right",
-          className: "header-icon-link header-discord-link",
+          className: "header-icon-link header-wechat-link"
         },
         {
-          href: "https://twitter.com/refine_dev",
+          href: "https://discord.gg/fVabfAQGdr",
           position: "right",
-          className: "header-icon-link header-twitter-link",
-        },
+          className: "header-icon-link header-discord-link",
+        }
+
       ],
     },
     footer: {
@@ -127,15 +128,11 @@ const config = {
       },
       links: [
         {
-          title: "Resources",
+          title: "开发文档",
           items: [
             {
               label: "Getting Started",
               to: "docs/getting-started/overview",
-            },
-            {
-              label: "Tutorials",
-              to: "docs",
             },
             {
               label: "Blog",
@@ -144,33 +141,22 @@ const config = {
           ],
         },
         {
-          title: "Product",
+          title: "互动专区",
           items: [
             {
-              label: "Examples",
-              to: "examples",
-            },
-            {
-              label: "Integrations",
-              to: "integrations",
-            },
-            {
-              label: "Become an Expert",
-              to: "become-a-refine-expert",
+              label: "在线问答",
+              to: "onlineqa",
             },
           ],
         },
         {
-          title: "Company",
+          title: "友情链接",
           items: [
             {
-              label: "About",
-              to: "about",
+              label: "李苟蛋の家",
+              to: "https://lizejiao.github.io/",
             },
-            {
-              label: "Store 🎁",
-              to: "https://store.refine.dev",
-            },
+
           ],
         },
         {
@@ -203,7 +189,6 @@ const config = {
       "微信: jzw89757",
     ],
     contactEmail: "1211717080@qq.com",
-
 
   },
 

@@ -1,18 +1,18 @@
 import React from "react";
 import Link from "@docusaurus/Link";
 
-import { RefineIcon } from "../../../components/landing/icons/refine-icon";
+import { BfineIcon } from "../../../components/landing/icons";
 
 export default function NavbarLogo({ className, ...props }) {
     return (
         <Link to="/" className="mx-auto lg:mx-0">
-            <RefineIcon
+            <BfineIcon
                 onContextMenu={(event) => {
                     event.preventDefault();
                     window
                         .open(
-                            "https://www.figma.com/file/y8lhTyumAN0zYI5nKKLoLN/refine.dev-brand-assets",
-                            "_blank",
+                            // "https://www.figma.com/file/y8lhTyumAN0zYI5nKKLoLN/refine.dev-brand-assets",
+                            "/","_blank",
                         )
                         .focus();
                 }}

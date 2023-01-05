@@ -13,23 +13,23 @@ export const POPOVERMENUS: NavMenu[] = [
             {
                 label: "技术知识",
                 description: "工作中接触过的技术点",
-                link: "/knowledge",
+                link: "/docs/knowledge",
                 icon: DocumentsIcon,
             },
             {
                 label: "架构",
                 description: "工作中一些场景需求的解决方案",
-                link: "/framework",
+                link: "/docs/framework",
                 icon: IntegrationsIcon,
             },
             {
                 label: "运维",
                 description: "项目落地，高可用，部署相关技术",
-                link: "/devOps",
+                link: "/docs/devOps",
                 icon: RefineIcon,
             },
         ],
-        imageLink: "https://store.refine.dev",
+        imageLink: "/",
         imageURL: "img/pexels-nishant-aneja-2393816.jpg",
     }
 ];

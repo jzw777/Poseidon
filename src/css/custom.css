@@ -305,6 +305,10 @@
     background: url("/icons/twitter.svg");
     background-size: contain;
 }
+.header-wechat-link::before {
+    background: url("/icons/wechat.svg");
+    background-size: contain;
+}
 
 /* Code Renderer Styles */
 
