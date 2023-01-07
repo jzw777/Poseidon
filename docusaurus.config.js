@@ -4,10 +4,11 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
+const path = require("path");
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: '无界互通-技术分享手册',
-  tagline: '无界技术团队，欢迎更多优秀的技术人才加入！',
+  title: '姜米尔的技术分享小站',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -29,15 +30,30 @@ const config = {
 
   presets: [
     [
-      'classic',
+      '@docusaurus/preset-classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
+          routeBasePath: '/docs',
+          sidebarPath: require.resolve("./sidebars.js"),
           editUrl:
-            'https://github.com/jzw777/Poseidon',
+              "https://github.com/jzw777/Poseidon",
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
+          admonitions: {
+            tag: ":::",
+            keywords: [
+              "additional",
+              "note",
+              "tip",
+              "info-tip",
+              "info",
+              "caution",
+              "danger",
+              "sourcecode",
+              "create-example",
+            ],
+          },
         },
         blog: {
           showReadingTime: true,
@@ -64,6 +80,19 @@ const config = {
         },
       };
     },
+    // [
+    //   "@docusaurus/plugin-content-docs",
+    //   {
+    //     id: "programming-language",
+    //     path: "wiki/programming-language",
+    //     routeBasePath: "programming-language",
+    //     sidebarPath: require.resolve("./sidebars.js"),
+    //     editUrl: "https://git.7wate.com/zhouzhongping/wiki/src/branch/master",
+    //     showLastUpdateAuthor: true,
+    //     showLastUpdateTime: true,
+    //     breadcrumbs: false,
+    //   },
+    // ],
     // "./plugins/intercom.js"
   ],
   themeConfig: {
@@ -96,11 +125,8 @@ const config = {
       },
     ],
     navbar: {
-      logo: {
-        alt: "Bfine",
-        src: "img/meetup.svg",
-      },
       items: [
+        {to:"website",label: "导航", position: "left"},
         { to: "blog", label: "博客", position: "left" },
 
         {

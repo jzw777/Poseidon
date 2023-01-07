@@ -20,7 +20,7 @@ function Home() {
                 <html data-page="index" data-customized="true" />
             </Head>
             <Layout
-                title={`Mill | For freedom`}
+                title={`Bfine`}
                 description="try to write something, no matter it would be read or not. I just want to express my feelings, to record my life."
             >
                 <Landing />

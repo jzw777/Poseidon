@@ -3,6 +3,7 @@ import {
     DocumentsIcon,
     IntegrationsIcon,
     RefineIcon,
+    TutorialIcon
 } from "./popover-icons";
 
 export const POPOVERMENUS: NavMenu[] = [
@@ -11,15 +12,15 @@ export const POPOVERMENUS: NavMenu[] = [
         label: "文档中心",
         items: [
             {
-                label: "技术知识",
+                label: "小记",
                 description: "工作中接触过的技术点",
-                link: "/docs/knowledge",
-                icon: DocumentsIcon,
+                link: "/docs",
+                icon: TutorialIcon,
             },
             {
-                label: "架构",
-                description: "工作中一些场景需求的解决方案",
-                link: "/docs/framework",
+                label: "基础",
+                description: "个人掌握的技能的归纳总结",
+                link: "basics",
                 icon: IntegrationsIcon,
             },
             {
@@ -30,6 +31,6 @@ export const POPOVERMENUS: NavMenu[] = [
             },
         ],
         imageLink: "/",
-        imageURL: "img/pexels-nishant-aneja-2393816.jpg",
+        imageURL: "https://test.preview.qingxinzhimei.com/2023/01/07/ERP202301070000003755.jpg",
     }
 ];

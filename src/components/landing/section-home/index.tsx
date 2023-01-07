@@ -11,51 +11,51 @@ export const SectionHome: React.FC = () => {
         offset: ["start end", "end end"],
     });
 
+
+
     const cardOpacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
     const { sm, md, lg, xl } = useTWBreakpoints();
 
+    // 一定要相信，这些生活的点滴会在你未来的某一天产生联系。一定要相信：勇气目标生命缘起……一切都不会令你失望，只会增加你的与众不同。
     return (
         <motion.div
             ref={ref}
-            className="h-auto px-4 -mt-px bg-white lg:h-screen lg:px-0"
+            className="h-auto px-4 -mt-px bg-white lg:h-screen lg:px-0 "
         >
             <motion.div className="relative top-0 left-0 flex flex-col items-center justify-end w-screen h-auto max-w-full gap-24 pt-16 pb-6 overflow-x-hidden lg:pt-16 lg:pb-12 lg:h-screen lg:snap-start lg:sticky lg:gap-0">
                 <div className="flex-1 flex flex-col-reverse gap-4 lg:gap-0 lg:flex-row mx-auto max-w-[900px] w-full h-full items-center justify-center">
                     <div className="flex-1">
                         <div className="font-montserrat text-[#1890FF] text-[26px] leading-[26px] sm:text-[28px] sm:leading-[28px] lg:text-[30px] lg:leading-[36px] mb-0">
-                            <div className="font-medium">IF YOU’RE ALREADY</div>
-                            <div className="font-medium">
-                                USING{" "}
-                                <span className="font-extrabold">refine,</span>
-                            </div>
+                            <div className="font-medium">{" "}你憧憬未来的时候，不会去想着把所有的事联系起来;</div>
+
                             <div className="font-medium">
                                 <span className="font-extrabold tracking-tight">
-                                    SHARE
-                                </span>{" "}
-                                YOUR USECASE &
+                                    只有在回忆过去的时候，
+                                </span>
+                                才会将这点点滴滴联系在一起。
                             </div>
                             <div className="font-medium">
-                                <span className="font-extrabold">INSPIRE</span>{" "}
-                                OTHERS
+                                <span className="font-extrabold">一定要相信，</span>{" "}
+                                这些生活的点滴会在你未来的某一天产生联系。
+                            </div>
+                            {/*<div className="font-medium">一定要相信：</div>*/}
+                            <div >
+                                一定要相信：
+                                <span className="font-extrabold">勇气、</span>
+                                <span className="font-extrabold">目标、</span>
+                                <span className="font-extrabold">生命、</span>
+                                <span className="font-extrabold">缘起……</span>
+
+                            </div>
+                            <div>
+                                {" "} 一切都不会令你失望，
+                                <span className="font-extrabold tracking-tight">
+                                    只会增加你的与众不同。
+                                </span>
                             </div>
                         </div>
-                        <div className="font-montserrat text-[16px] leading-[20px] tracking-tight text-[#2A2A42] mt-4 lg:mt-8 mb-0 max-w-[380px] ">
-                            <p>
-                                We are very happy to see how people are building
-                                great things with{" "}
-                                <strong className="text-bold">refine</strong>.
-                                Share your{" "}
-                                <span className="whitespace-nowrap">
-                                    use-case
-                                </span>{" "}
-                                to get listed on the showcase page and receive{" "}
-                                <strong className="text-bold">
-                                    $100 Amazon Gift card
-                                </strong>
-                                .
-                            </p>
-                        </div>
+
                         <div className="flex items-center gap-8 mt-4 lg:mt-16">
                             <a
                                 href="docs/tutorial-basics"
