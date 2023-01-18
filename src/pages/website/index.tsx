@@ -1,9 +1,7 @@
 import React from "react";
 import Head from "@docusaurus/Head";
-
 import Layout from "../../theme/Layout";
 import Card from "../../components/website/card";
-import LargeCard from "../../components/website/large-card";
 import { integrations } from "../../assets/website";
 import styles from "./styles.module.css";
 import { Integration } from "../../types/integrations";
@@ -16,48 +14,34 @@ const Integrations: React.FC = () => {
 
 
     const renderIntegration = (integration: Integration, field: string) => {
-        switch (field) {
-            case "ui-framework-packages":
-            case "frameworks":
-                return (
-                    <LargeCard
-                        status={integration.status}
-                        title={integration.name}
-                        description={integration.description}
-                        linkUrl={integration.url}
-                        icon={integration.icon}
-                    />
-                );
-            default:
-                return (
-                    <Card
-                        status={integration.status}
-                        title={integration.name}
-                        description={integration.description}
-                        linkUrl={integration.url}
-                        icon={integration.icon}
-                        contributer={integration?.contributors?.[0]}
-                    />
-                );
-        }
+        return (
+            <Card
+                status={integration.status}
+                title={integration.name}
+                description={integration.description}
+                linkUrl={integration.url}
+                icon={integration.icon}
+                contributer={integration?.contributors?.[0]}
+            />
+        );
     };
 
     return (
         <Layout>
             <Head title={"Navigation | "+siteConfig.title} >
-                <html data-page="integrations" data-customized="true" />
+                <html data-page="navigations" data-customized="true" />
             </Head>
             <div className={styles.integrations_container}>
                 <div className={styles.header}>
                     <div className={styles.headerTitle}>
-                        <span>SEAMLESS INTEGRATION WITH YOUR</span>
+                        {/*<span>常用网站导航</span>*/}
                         <span className={styles.headerTitleBold}>
-                            EXISTING ECOSYSTEM.
+                            常用网站导航
                         </span>
                     </div>
                     <p className={styles.headerText}>
-                        LIST OF PACKAGES TO EXTEND YOUR REFINE PROJECT WITH UI
-                        FRAMEWORKS, BACKEND CONNECTORS AND OTHER POWERFUL TOOLS.
+                        个人平常工作和生活中，经常会用到的，或者觉得比较好的网站，
+                        也推荐给能看到这个页面的朋友。
                     </p>
                 </div>
                 <div className={styles.integrationsWrapper}>
