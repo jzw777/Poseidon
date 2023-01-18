@@ -310,6 +310,17 @@
     background-size: contain;
 }
 
+.pop-wechat{
+
+    width: 150px;
+    height: 150px;
+    /*background-color: #6714CC;*/
+    background-image: url('http://test.preview.qingxinzhimei.com/2023/01/14/ERP202301140000033937.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
 /* Code Renderer Styles */
 
 .pre {

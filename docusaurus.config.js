@@ -55,13 +55,7 @@ const config = {
             ],
           },
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/jzw777/Poseidon',
-        },
+        blog: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -80,6 +74,21 @@ const config = {
         },
       };
     },
+    [
+      "./plugins/blog-plugin.js",
+      {
+        blogTitle: "Blog",
+        blogDescription: "A Docusaurus powered blog!",
+        routeBasePath: "/blog",
+        postsPerPage: 12,
+        blogSidebarTitle: "All posts",
+        blogSidebarCount: 0,
+        feedOptions: {
+          type: "all",
+          copyright: `Copyright © ${new Date().getFullYear()} Mill.`,
+        },
+      },
+    ],
     // [
     //   "@docusaurus/plugin-content-docs",
     //   {
@@ -93,7 +102,6 @@ const config = {
     //     breadcrumbs: false,
     //   },
     // ],
-    // "./plugins/intercom.js"
   ],
   themeConfig: {
     prism: {
@@ -111,7 +119,6 @@ const config = {
         },
       ],
     },
-    image: "img/refine_social_new.png",
     algolia: {
       appId: "KRR9VEUPCT",
       apiKey: "cd0188125dcd31fb4b011b5e536d963a",
@@ -134,11 +141,11 @@ const config = {
           position: "right",
           className: "header-icon-link header-github-link",
         },
-        {
-          href:"/img/qrcode.png",
-          position: "right",
-          className: "header-icon-link header-wechat-link"
-        },
+        // {
+        //   href:"/img/qrcode.png",
+        //   position: "right",
+        //   className: "header-icon-link header-wechat-link"
+        // },
         {
           href: "https://discord.gg/fVabfAQGdr",
           position: "right",

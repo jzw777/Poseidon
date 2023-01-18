@@ -7,9 +7,13 @@ import LargeCard from "../../components/website/large-card";
 import { integrations } from "../../assets/website";
 import styles from "./styles.module.css";
 import { Integration } from "../../types/integrations";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+
 
 const Integrations: React.FC = () => {
     const integrationFields = Object.keys(integrations);
+    const { siteConfig } = useDocusaurusContext();
+
 
     const renderIntegration = (integration: Integration, field: string) => {
         switch (field) {
@@ -40,7 +44,7 @@ const Integrations: React.FC = () => {
 
     return (
         <Layout>
-            <Head title="Integrations | refine">
+            <Head title={"Navigation | "+siteConfig.title} >
                 <html data-page="integrations" data-customized="true" />
             </Head>
             <div className={styles.integrations_container}>

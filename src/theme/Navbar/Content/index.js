@@ -140,10 +140,17 @@ const PopoverMenu = ({label, imageLink, imageURL, children}) => {
 };
 
 export default function NavbarContent() {
+    const [isShowing, setIsShowing] = React.useState(false);
+    const timeoutRef = React.createRef();
+    const timeoutEnterRef = React.createRef();
+    const location = useLocation();
     const mobileSidebar = useNavbarMobileSidebar();
     const items = useNavbarItems();
     const [leftItems, rightItems] = splitNavbarItems(items);
     const searchBarItem = items.find((item) => item.type === "search");
+    React.useEffect(() => {
+        setIsShowing(false);
+    }, [location]);
 
     return (
         <NavbarContentLayout
@@ -182,6 +189,44 @@ export default function NavbarContent() {
 
                 <>
                     <NavbarItems items={rightItems}/>
+                    {/*weChat*/}
+                    <Popover className="relative top-1 "
+                             onMouseEnter={() => {
+                                 timeoutEnterRef.current = setTimeout(
+                                     () => setIsShowing(true),
+                                     210,
+                                 );
+                                 clearTimeout(timeoutRef.current);
+                             }}
+                             onMouseLeave={() => {
+                                 timeoutRef.current = setTimeout(() => setIsShowing(false), 210);
+                                 clearTimeout(timeoutEnterRef.current);
+                             }}
+                    >
+                        <Popover.Button as='div'  >
+                            <NavbarItem className={`text-[#2A2A42] hover:text-[#2a2a42] hover:no-underline hoverline-link header-icon-link header-wechat-link p-0 with-hoverline`} > </NavbarItem>
+                        </Popover.Button>
+                        <Transition
+                            as={React.Fragment}
+                            enter="transition ease-in duration-200"
+                            enterFrom="opacity-0 translate-y-3"
+                            enterTo="opacity-100 translate-y-0"
+                            leave="transition ease-out duration-200"
+                            leaveFrom="opacity-100 translate-y-0"
+                            leaveTo="opacity-0 translate-y-3"
+                            show={isShowing}
+                            onMouseEnter={(event) => {
+                                event.stopPropagation();
+                            }}
+                        >
+
+                        <Popover.Panel className="absolute z-10 top-[28px] left-[-35px]  ">
+                            <div className="grid overflow-hidden  pop-wechat " />
+                        </Popover.Panel>
+
+                        </Transition>
+                    </Popover>
+
                     <NavbarColorModeToggle className={`${styles.colorModeToggle} navbar-theme-toggle`}/>
                     {!searchBarItem && (
                         <NavbarSearch>
