@@ -35,9 +35,10 @@ const config = {
       ({
         docs: {
           routeBasePath: '/docs',
+
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl:
-              "https://github.com/jzw777/Poseidon",
+          // editUrl:
+          //     "https://github.com/jzw777/Poseidon",
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
           admonitions: {
@@ -104,6 +105,11 @@ const config = {
     // ],
   ],
   themeConfig: {
+    docs: {
+      sidebar: {
+        autoCollapseCategories: true,
+      },
+    },
     prism: {
       magicComments: [
         // Remember to extend the default highlight class name as well!

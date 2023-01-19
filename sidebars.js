@@ -23,7 +23,7 @@ module.exports = {
             link: {
                 type: "generated-index",
                 title: "JAVA基础",
-                slug: "/basics",
+                slug: "basics",
             },
             items: [
                 {
@@ -46,7 +46,38 @@ module.exports = {
                 },
 
             ],
-            collapsed: false,
+            collapsed: true,
+        },
+        {
+            type: "category",
+            label: "DevOps",
+            link: {
+                type: "generated-index",
+                title: "DevOps",
+                slug: "devops",
+            },
+            items: [
+                {
+                    type: "category",
+                    label: "Docker",
+                    link: {
+                        type: "doc",
+                        // title: "MySQL",
+                        id: "devops/docker/docker-intro",
+                    },
+                    items: [
+                        "devops/docker/docker-basic",
+                        "devops/docker/docker-core",
+                        "devops/docker/docker-practice",
+                    ]
+                },
+                {
+                    type: "doc",
+                    id: "devops/containerd"
+                }
+
+            ],
+            collapsed: true,
         }
     ]
 };

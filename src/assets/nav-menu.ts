@@ -20,7 +20,7 @@ export const POPOVERMENUS: NavMenu[] = [
             {
                 label: "基础",
                 description: "个人掌握的技能的归纳总结",
-                link: "basics",
+                link: "/docs/basics",
                 icon: IntegrationsIcon,
             },
             {
