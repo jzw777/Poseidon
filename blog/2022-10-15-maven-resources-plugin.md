@@ -2,20 +2,21 @@
 title: maven-resources-plugin
 description: 项目打包时如果有证书，脚本等文件需要跟项目jar包放在一起，可以使用这个插件
 authors: jiangzw09
-date: 2022-10-06 00:05:04
-tags: 
-  - java
-  - maven
+slug: maven-resources-plugin
+tags: [java,maven]
+date: 2022-10-15
 image: https://s1.ax1x.com/2022/11/09/zSGoyq.jpg
+is_featured: false
+hide_table_of_contents: false
 ---
 
 > 官网地址：https://maven.apache.org/plugins/maven-resources-plugin/
-
-​	Resources Plugin处理项目资源到输出目录的复制。有两种不同的资源：主资源和测试资源。不同之处在于，主资源是与主源代码关联的资源，而测试资源则与测试源代码关联。
+ 
+ ​	Resources Plugin处理项目资源到输出目录的复制。有两种不同的资源：主资源和测试资源。不同之处在于，主资源是与主源代码关联的资源，而测试资源则与测试源代码关联。
 
 因此，这允许分离主源代码及其单元测试的资源。
 
-### Goals
+## Goals
 
 ​	共有三个目标：
 
@@ -30,10 +31,9 @@ image: https://s1.ax1x.com/2022/11/09/zSGoyq.jpg
 - Resources:copy-resources
 
 ​	手动拷贝资源到输出目录。
+## 使用
 
-### 使用
-
-#### 拷贝资源
+### 拷贝资源
 
 该插件支持将特定位置的资源拷贝到指定路径下。
 
@@ -62,14 +62,15 @@ image: https://s1.ax1x.com/2022/11/09/zSGoyq.jpg
     </executions>
 </plugin>
 ```
+### 过滤/替换
 
-#### 过滤/替换
+​	在你的resources中包含变量，这些变量以${...}分隔符表示。可以来自系统属性，项目属性，过滤器资源和命令行。
+:::note
+Springboot 项目做了如下配置`<resource.delimiter>@</resource.delimiter>`
 
-​	在你的resources中包含变量，这些变量以`${...}`分隔符表示。可以来自系统属性，项目属性，过滤器资源和命令行。
+需要添加 `<resource.delimiter>${}</resource.delimiter>`  改回默认的，否则会发现替换不能生效。
+:::
 
-> Springboot 项目做了如下配置<resource.delimiter>@</resource.delimiter>
->
-> 需要添加 <resource.delimiter>${}</resource.delimiter> 改回默认的，否则会发现替换不能生效。
 
 ```xml
 <!--项目属性-->
@@ -130,18 +131,21 @@ image: https://s1.ax1x.com/2022/11/09/zSGoyq.jpg
 
 - #### clean
 
->  `pre-clean`  ,  `clean`  ,  `post-clean` 
+>  `pre-clean`  ,  `clean`  ,  `post-clean`
 
 - #### default
 
 >`validate`,`initialize`,`generate-sources`,`process-sources`,`generate-resources`,
 >`	process-resources`,`compile`,`process-classes`,`generate-test-sources`,
 >`	process-test-sources`,`generate-test-resources`,`process-test-resources`,
->`test-compile`,`process-test-classes`,`test,prepare-package`, 
->`		package` ,`pre-integration-test`,`integration-test`, 
+>`test-compile`,`process-test-classes`,`test,prepare-package`,
+>`		package` ,`pre-integration-test`,`integration-test`,
 >` 	post-integration-test`,`verify`,`install`,`deploy`
 
 
 - #### site
 
 > `pre-site`,`site`,`post-site`,`site-deploy`
+
+
+

@@ -9,7 +9,7 @@ const path = require("path");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: '姜米尔的技术分享小站',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://jzw777.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -19,7 +19,9 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
  // organizationName: 'facebook', // Usually your GitHub org/user name.
  // projectName: 'docusaurus', // Usually your repo name.
-
+  organizationName: 'jzw777',
+  projectName: 'jzw777.github.io',
+  deploymentBranch: 'main',
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
@@ -171,7 +173,7 @@ const config = {
           items: [
             {
               label: "Getting Started",
-              to: "docs/getting-started/overview",
+              to: "docs",
             },
             {
               label: "Blog",
@@ -184,7 +186,8 @@ const config = {
           items: [
             {
               label: "在线问答",
-              to: "onlineqa",
+              to: "/"
+              // to: "onlineqa",
             },
           ],
         },
