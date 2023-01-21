@@ -1,7 +1,7 @@
 import {IntegrationsType} from "../types/integrations";
 
 
-import {Codee, JavaGuide, KubeSphere, Leetcode} from "./website-icons";
+import {Codee, Docker, JavaGuide, KubeSphere, Leetcode} from "./website-icons";
 
 export const integrations: IntegrationsType = {
 
@@ -37,6 +37,13 @@ export const integrations: IntegrationsType = {
             icon: Leetcode,
             description: "提升程序员基本素养的神奇网站",
             url: "https://leetcode.cn/",
+            status: "stable"
+        },
+        {
+            name: "docker 学习文档",
+            icon: Docker,
+            description: "使用 Docker，可以让应用的部署、测试和分发都变得前所未有的高效和轻松！",
+            url: "https://yeasy.gitbook.io/docker_practice/",
             status: "stable"
         }
     ],

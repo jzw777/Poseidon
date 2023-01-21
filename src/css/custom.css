@@ -886,3 +886,8 @@ html[data-theme="dark"]:not([data-customized="true"])
     font-size: 14px;
     line-height: 1.5;
 }
+.bg-star {
+    background-image: url("https://test.preview.qingxinzhimei.com/2023/01/19/ERP202301190000008483.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}

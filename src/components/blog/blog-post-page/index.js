@@ -96,7 +96,7 @@ export const BlogPostPageView = ({ children }) => {
                 <br />
                 <Tags />
             </div>
-            <NewsletterCta />
+            {/*<NewsletterCta />*/}
         </BlogPostItemContainer>
     );
 };

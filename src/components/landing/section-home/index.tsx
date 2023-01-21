@@ -21,7 +21,7 @@ export const SectionHome: React.FC = () => {
     return (
         <motion.div
             ref={ref}
-            className="h-auto px-4 -mt-px bg-white lg:h-screen lg:px-0 "
+            className="h-auto px-4 -mt-px bg-white lg:h-screen lg:px-0 bg-star"
         >
             <motion.div className="relative top-0 left-0 flex flex-col items-center justify-end w-screen h-auto max-w-full gap-24 pt-16 pb-6 overflow-x-hidden lg:pt-16 lg:pb-12 lg:h-screen lg:snap-start lg:sticky lg:gap-0">
                 <div className="flex-1 flex flex-col-reverse gap-4 lg:gap-0 lg:flex-row mx-auto max-w-[900px] w-full h-full items-center justify-center">
@@ -82,7 +82,7 @@ export const SectionHome: React.FC = () => {
                         >
                             <div className="w-full max-w-[260px] lg:max-w-[375px] absolute top-[-32px]">
                                 <motion.img
-                                    src="landing/pexels-andrea-piacquadio-3790797.jpg"
+                                    src="https://test.preview.qingxinzhimei.com/2023/01/19/ERP202301190000009762.jpg"
                                     style={
                                         lg
                                             ? {

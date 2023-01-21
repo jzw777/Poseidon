@@ -66,9 +66,11 @@ module.exports = {
                         id: "devops/docker/docker-intro",
                     },
                     items: [
+
+                        "devops/docker/docker-install",
                         "devops/docker/docker-basic",
+                        "devops/docker/docker-use",
                         "devops/docker/docker-core",
-                        "devops/docker/docker-practice",
                     ]
                 },
                 {

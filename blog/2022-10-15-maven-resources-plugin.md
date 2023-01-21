@@ -5,7 +5,7 @@ authors: jiangzw09
 slug: maven-resources-plugin
 tags: [java,maven]
 date: 2022-10-15
-image: https://s1.ax1x.com/2022/11/09/zSGoyq.jpg
+image: https://test.preview.qingxinzhimei.com/2023/01/19/ERP202301190000006034.jpg
 is_featured: false
 hide_table_of_contents: false
 ---
