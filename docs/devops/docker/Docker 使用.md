@@ -108,13 +108,13 @@ docker build [选项] <上下文路径/URL/->
 
 ### COPY
 
-```dockerfile
-COPY [--chown=<user>:<group>] <源路径>... <目标路径>
+```
+COPY [ --chown=<user>:<group>] <源路径>... <目标路径>
 ```
 
 `COPY` 指令将从构建上下文目录中 `<源路径>` 的文件/目录复制到新的一层的镜像内的 `<目标路径>` 位置。比如：
 
-```dockerfile
+```
 COPY package.json /usr/src/app/
 ```
 
@@ -156,7 +156,7 @@ Union FS 是有最大层数限制的，比如 AUFS，曾经是最大不得超过
 
 ### CMD
 
-```dockerfile
+```
 #shell 格式
 CMD <命令>
 #exec 格式
@@ -182,14 +182,14 @@ CMD [ "sh", "-c", "echo $HOME" ]
 
 ### ENV
 
-```dockerfile
+```
 ENV <key> <value>
 ENV <key1>=<value1> <key2>=<value2>...
 ```
 
 ### ARG
 
-```dockerfile
+```
 ARG <参数名>[=<默认值>]
 ```
 
@@ -197,7 +197,7 @@ ARG <参数名>[=<默认值>]
 
 ### VOLUME
 
-```dockerfile
+```
 VOLUME ["<路径1>", "<路径2>"...]
 VOLUME <路径>
 ```
@@ -208,7 +208,7 @@ VOLUME /data
 ```
 
 这里的 `/data` 目录就会在容器运行时自动挂载为匿名卷，任何向 `/data` 中写入的信息都不会记录进容器存储层，从而保证了容器存储层的无状态化。当然，运行容器时可以覆盖这个挂载设置。比如：
-```dockerfile
+```shell
 docker run -d -v mydata:/data xxxx
 ```
 
@@ -220,7 +220,7 @@ docker run -d -v mydata:/data xxxx
 
 ### WORKDIR
 
-```dockerfile
+```
 WORKDIR <工作目录路径>
 ```
 
@@ -228,7 +228,7 @@ WORKDIR <工作目录路径>
 
 ### USER
 
-```dockerfile
+```
 USER <用户名>[:<用户组>]
 ```
 
@@ -236,7 +236,7 @@ USER <用户名>[:<用户组>]
 
 ### HEALTHCHECK
 
-```dockerfile
+```
 HEALTHCHECK [选项] CMD <命令>：设置检查容器健康状况的命令
 HEALTHCHECK NONE：如果基础镜像有健康检查指令，使用这行可以屏蔽掉其健康检查指令
 ```
@@ -256,7 +256,7 @@ HEALTHCHECK --interval=5s --timeout=3s \
 
 ### 启动容器
 
-```dockerfile
+```shell
 #	新建并启动
 docker run
 # 启动已终止容器
@@ -267,19 +267,19 @@ docker start
 
 让 Docker 在后台运行而不是直接把执行命令的结果输出在当前宿主机下。此时，可以通过添加 `-d` 参数来实现。后台运行后，获取容器的输出信息，可以通过 `docker container logs` 命令。
 
-```dockerfile
+```shell
 docker container logs [container ID or NAMES]
 ```
 
 ### 终止
 
-```dockerfile
+```shell
 docker container stop [container ID or NAMES]
 ```
 
 ### 进入容器
 
-```dockerfile
+```shell
 docker attach [container ID or NAMES] 
 docker exec -it [container ID or NAMES] bash
 ```
@@ -288,14 +288,86 @@ docker exec -it [container ID or NAMES] bash
 
 ### 删除
 
-```dockerfile
+```shell
 docker rm [container ID or NAMES]
 ```
 
 如果要删除一个运行中的容器，可以添加 `-f` 参数。
 
-```dockerfile
+```shell
 docker container prune
 ```
 
 可以清理掉所有处于终止状态的容器。
+
+## 数据管理
+
+### 数据卷
+
+`数据卷` 是一个可供一个或多个容器使用的特殊目录，它绕过 UFS，可以提供很多有用的特性：
+
+- `数据卷` 可以在容器之间共享和重用
+- 对 `数据卷` 的修改会立马生效
+- 对 `数据卷` 的更新，不会影响镜像
+- `数据卷` 默认会一直存在，即使容器被删除
+
+> 注意：`数据卷` 的使用，类似于 Linux 下对目录或文件进行 mount，镜像中的被指定为挂载点的目录中的文件会复制到数据卷中（仅数据卷为空时会复制）。
+
+#### 创建一个数据卷
+
+```shell
+docker volume create my-vol
+```
+
+查看所有的 `数据卷`
+
+```shell
+docker volume ls
+```
+
+在主机里使用以下命令可以查看指定 `数据卷` 的信息
+
+```shell
+docker volume inspect my-vol
+[
+    {
+        "Driver": "local",
+        "Labels": {},
+        "Mountpoint": "/var/lib/docker/volumes/my-vol/_data",
+        "Name": "my-vol",
+        "Options": {},
+        "Scope": "local"
+    }
+]
+```
+
+#### 启动一个挂载数据卷的容器
+
+在用 `docker run` 命令的时候，使用 `--mount` 标记来将 `数据卷` 挂载到容器里。在一次 `docker run` 中可以挂载多个 `数据卷`。
+
+下面创建一个名为 `web` 的容器，并加载一个 `数据卷` 到容器的 `/usr/share/nginx/html` 目录。
+
+```shell
+docker run -d -P \
+    --name web \
+    \# -v my-vol:/usr/share/nginx/html \
+    --mount source=my-vol,target=/usr/share/nginx/html \
+    nginx:alpine
+```
+
+#### 删除数据卷
+
+```shell
+docker volume rm my-vol
+docker volume prune
+```
+
+### 挂载主机目录
+
+```shell
+docker run -d -P \
+    --name web \
+    # -v /src/webapp:/usr/share/nginx/html:ro \
+    --mount type=bind,source=/src/webapp,target=/usr/share/nginx/html,readonly \
+    nginx:alpine
+```

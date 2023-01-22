@@ -109,6 +109,30 @@ sudo groupadd docker
 ```shell
 sudo usermod -aG docker $USER
 ```
+### 开启TCP连接
+
+```shell
+vi /lib/systemd/system/docker.service
+#ExecStart=/usr/bin/dockerd -H unix:///var/run/docker.sock -H tcp://0.0.0.0:2375
+
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+```
+
+-H代表指定docker的监听方式，这里是socket文件位置，也就是socket方式，2375就是tcp端口。
+
+### 安装管理工具portainer
+
+```shell
+docker pull 6053537/portainer-ce  #直接用汉化版镜像
+docker volume create portainer_data
+docker run -d --name portainer -p 9000:9000 --restart=always \
+     -v /var/run/docker.sock:/var/run/docker.sock \
+     -v portainer_data:/data  6053537/portainer-ce
+```
+
+
+
 ### 参考文档
 
 - [Docker 官方 CentOS 安装文档](https://docs.docker.com/install/linux/docker-ce/centos/)。
