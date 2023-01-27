@@ -1,11 +1,12 @@
 import React from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
-import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
+import {useBaseUrlUtils} from "@docusaurus/useBaseUrl";
 import ThemedImage from "@theme/ThemedImage";
 import styles from "./styles.module.css";
-import { RefineIcon } from "../../../components/landing/icons/refine-icon";
-import { BfineIcon } from "../../../components/landing/icons/bfine-icon";
+import {BfineIcon} from "../../../components/landing/icons/bfine-icon";
+import {MIcon} from "../../../components/landing/icons/m-icon";
+
 function LogoImage({ logo }) {
     const { withBaseUrl } = useBaseUrlUtils();
     const sources = {
@@ -33,6 +34,6 @@ export default function FooterLogo({ logo }) {
             <BfineIcon className="w-[107px] h-auto" />
         </Link>
     ) : (
-        <BfineIcon className="w-[107px] h-auto" />
+        <MIcon className="w-[107px] h-auto" />
     );
 }

@@ -887,7 +887,15 @@ html[data-theme="dark"]:not([data-customized="true"])
     line-height: 1.5;
 }
 .bg-star {
-    background-image: url("https://test.preview.qingxinzhimei.com/2023/01/19/ERP202301190000008483.jpg");
+    background-image: url("https://test.preview.qingxinzhimei.com/2023/01/27/ERP202301270000005623.jpg");
     background-size: cover;
     background-attachment: fixed;
+}
+.my-font {
+    font-family: "ZCOOL KuaiLe";
+}
+
+@font-face {
+    font-family: ZCOOL KuaiLe;
+    src: url("ZCOOLKuaiLe-Regular.ttf");
 }

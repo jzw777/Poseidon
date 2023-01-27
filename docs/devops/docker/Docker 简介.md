@@ -3,9 +3,8 @@ id: docker-intro
 title: Docker 简介
 ---
 
-<div className="img-container"  >
-
-   <img  src="https://img1.sycdn.imooc.com/5f16823200012aa313540894.png"  alt="gateway" />
+<div className="img-container" >
+<img  src="https://img1.sycdn.imooc.com/5f16823200012aa313540894.png" alt="gateway" />
 </div>
 
 # 什么是 Docker
@@ -20,7 +19,6 @@ title: Docker 简介
 <center>Docker 架构</center>
 
 > `runc` 是一个 Linux 命令行工具，用于根据 [OCI容器运行时规范](https://github.com/opencontainers/runtime-spec) 创建和运行容器。
-
 > `containerd` 是一个守护程序，它管理容器生命周期，提供了在一个节点上执行容器和管理镜像的最小功能集。
 
 下面的图片比较了 **Docker** 和传统虚拟化方式的不同之处。传统虚拟机技术是虚拟出一套硬件后，在其上运行一个完整操作系统，在该系统上再运行所需应用进程；而容器内的应用进程直接运行于宿主的内核，容器内没有自己的内核，而且也没有进行硬件虚拟。因此容器要比传统虚拟机更为轻便。

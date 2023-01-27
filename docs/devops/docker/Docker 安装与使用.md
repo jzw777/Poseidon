@@ -70,9 +70,14 @@ Docker的配置文件路径 `/etc/docker/daemon.json`
 
 ```json
 {
-  "registry-mirrors":["https://nhagynw4.mirror.aliyuncs.com"],
+  "registry-mirrors": ["https://hub-mirror.c.163.com","https://bmtrgdvx.mirror.aliyuncs.com","https://y9lmbx5j.mirror.aliyuncs.com"],
   "insecure-registries":["https://harbor.zhangsan.com"],
-  "data-root": "/data/docker"
+  "data-root": "/data/docker",
+  "log-driver":"json-file",
+  "log-opts":{
+        "max-size" :"50m",
+        "max-file":"3"
+    }
 }
 ```
 :::tip

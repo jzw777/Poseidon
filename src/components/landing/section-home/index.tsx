@@ -26,7 +26,7 @@ export const SectionHome: React.FC = () => {
             <motion.div className="relative top-0 left-0 flex flex-col items-center justify-end w-screen h-auto max-w-full gap-24 pt-16 pb-6 overflow-x-hidden lg:pt-16 lg:pb-12 lg:h-screen lg:snap-start lg:sticky lg:gap-0">
                 <div className="flex-1 flex flex-col-reverse gap-4 lg:gap-0 lg:flex-row mx-auto max-w-[900px] w-full h-full items-center justify-center">
                     <div className="flex-1">
-                        <div className="font-montserrat text-[#1890FF] text-[26px] leading-[26px] sm:text-[28px] sm:leading-[28px] lg:text-[30px] lg:leading-[36px] mb-0">
+                        <div className="my-font text-[#1890FF] text-[26px] leading-[26px] sm:text-[28px] sm:leading-[28px] lg:text-[30px] lg:leading-[36px] mb-0">
                             <div className="font-medium">{" "}你憧憬未来的时候，不会去想着把所有的事联系起来;</div>
 
                             <div className="font-medium">
@@ -58,13 +58,14 @@ export const SectionHome: React.FC = () => {
 
                         <div className="flex items-center gap-8 mt-4 lg:mt-16">
                             <a
-                                href="docs/tutorial-basics"
+                                href="docs"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="shadow-startTiles  appearance-none flex items-center justify-center no-underline font-bold font-montserrat text-sm h-8 w-44 text-white text-center bg-gradient-to-l from-[#1890FF] to-[#47EBF5] border-0 rounded-[4px] cursor-pointer"
+                                className="shadow-startTiles  appearance-none flex items-center justify-center no-underline font-bold  text-sm h-8 w-44 text-white text-center bg-gradient-to-l from-[#1890FF] to-[#47EBF5] border-0 rounded-[4px] cursor-pointer my-font"
                             >
                                 与君{" "}
-                                <span className="mx-1 font-normal">🧸</span>
+                                <img src="icons/m.svg" height="20px" className="mx-1" />
+                                {/*<span className="mx-1 font-normal">🧸</span>*/}
                                 共勉 →
                             </a>
 
@@ -82,7 +83,7 @@ export const SectionHome: React.FC = () => {
                         >
                             <div className="w-full max-w-[260px] lg:max-w-[375px] absolute top-[-32px]">
                                 <motion.img
-                                    src="https://test.preview.qingxinzhimei.com/2023/01/19/ERP202301190000009762.jpg"
+                                    src="https://test.preview.qingxinzhimei.com/2023/01/27/ERP202301270000008097.png"
                                     style={
                                         lg
                                             ? {
