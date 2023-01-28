@@ -56,6 +56,7 @@ module.exports = {
                         "devops/docker/docker-install",
                         "devops/docker/docker-use",
                         "devops/docker/docker-core",
+                        "devops/docker/docker-network",
                     ]
                 },
                 {

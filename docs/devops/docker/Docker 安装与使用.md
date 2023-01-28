@@ -89,7 +89,7 @@ Docker的配置文件路径 `/etc/docker/daemon.json`
 上面三项分别是配置的镜像加速，私库，Docker的数据位置。随着使用，Docker 会占用很大的存储空间，有必要修改 Docker的目录，比如指向一块扩展磁盘上。
 执行如下命令使配置生效
 
-```shell
+```sh
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 ```
@@ -111,12 +111,12 @@ sudo systemctl start docker
 sudo groupadd docker
 ```
 将当前用户加入 `docker` 组：
-```shell
+```sh
 sudo usermod -aG docker $USER
 ```
 ### 开启TCP连接
 
-```shell
+```sh
 vi /lib/systemd/system/docker.service
 #ExecStart=/usr/bin/dockerd -H unix:///var/run/docker.sock -H tcp://0.0.0.0:2375
 
@@ -128,7 +128,7 @@ sudo systemctl restart docker
 
 ### 安装管理工具portainer
 
-```shell
+```sh
 docker pull 6053537/portainer-ce  #直接用汉化版镜像
 docker volume create portainer_data
 docker run -d --name portainer -p 9000:9000 --restart=always \

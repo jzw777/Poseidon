@@ -29,14 +29,7 @@ service docker start
 systemctl start docker.service
 ```
 
-然后我们使用 ps 命令就能看到 docker daemon 进程了。
-
-```bash
-$ ps aux | grep dockerd
-root     10214  1.2  0.0 1014252 23768 ?       Ssl  00:58   0:00 /usr/bin/dockerd-current --add-runtime docker-runc=/usr/libexec/docker/docker-runc-current --default-runtime=docker-runc --exec-opt native.cgroupdriver=systemd --userland-proxy-path=/usr/libexec/docker/docker-proxy-current --init-path=/usr/libexec/docker/docker-init-current --seccomp-profile=/etc/docker/seccomp.json --selinux-enabled --log-driver=journald --signature-verification=false --storage-driver overlay2
-```
-
-然后我们查看和 client 交互的 socket 文件也存在了。
+我们使用 ps 命令就能看到 docker daemon 进程了，然后我们查看和 client 交互的 socket 文件也存在了。
 
 ```bash
 $ll /var/run/docker.sock
