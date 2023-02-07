@@ -7,10 +7,10 @@ export const integrations: IntegrationsType = {
 
     "tools-website": [
         {
-            name: "Json analyze",
+            name: "菜鸟工具",
             icon: Codee,
-            description: "JSON在线解析与格式化校验",
-            url: "https://www.codeeeee.com/json.html",
+            description: "工具大集合",
+            url: "https://c.runoob.com/",
             status: "stable",
         },
     ],

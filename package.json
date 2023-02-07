@@ -14,9 +14,9 @@
     "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.1.0",
-    "@docusaurus/plugin-client-redirects": "^2.1.0",
-    "@docusaurus/preset-classic": "^2.1.0",
+    "@docusaurus/core": "^2.3.1",
+    "@docusaurus/plugin-client-redirects": "^2.3.1",
+    "@docusaurus/preset-classic": "^2.3.1",
     "@headlessui/react": "^1.7.7",
     "@mdx-js/react": "^1.6.21",
     "@tailwindcss/line-clamp": "^0.4.2",
@@ -43,7 +43,7 @@
     "yarn": "^1.22.19"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.2.0",
+    "@docusaurus/module-type-aliases": "^2.3.1",
     "@tsconfig/docusaurus": "^1.0.4",
     "@types/fs-extra": "^9.0.13",
     "@types/gtag.js": "^0.0.12",
