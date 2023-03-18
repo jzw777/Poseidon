@@ -171,11 +171,11 @@ const config = {
       },
       links: [
         {
-          title: "开发文档",
+          title: "学习总结",
           items: [
             {
-              label: "Getting Started",
-              to: "docs",
+              label: "标签",
+              to: "blog/tags",
             },
             {
               label: "Blog",
@@ -184,11 +184,11 @@ const config = {
           ],
         },
         {
-          title: "互动专区",
+          title: "零星点点",
           items: [
             {
-              label: "在线问答",
-              to: "/"
+              label: "关于我",
+              to: "/about"
               // to: "onlineqa",
             },
           ],
@@ -199,6 +199,10 @@ const config = {
             {
               label: "李苟蛋の家",
               to: "https://lizejiao.github.io/",
+            },
+            {
+              label: "无界互通",
+              to: "https://nav.wujiehutong.com",
             },
 
           ],
